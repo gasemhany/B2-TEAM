@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # الخطوة 1: تنزيل المستودع
-      - name: B2
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       # الخطوة 2: إعداد Git
@@ -20,7 +20,7 @@ jobs:
         run: |
           git config user.name "gasem_hany" # استبدل باسم المستخدم الخاص بك
           git config user.email "gasemar684@gmail.com" # استبدل بالبريد الإلكتروني الخاص بك
-          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/gasem_hany/B2-TEAM.git # اسم المستودع الجديد
+          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/gasemhany/B2-TEAM.git # اسم المستودع الجديد
 
       # الخطوة 3: تحديث المستودع ودفع التعديلات
       - name: Pull and Push Changes
