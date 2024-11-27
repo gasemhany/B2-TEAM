@@ -1,16 +1,12 @@
 CREATE DATABASE b2;
 
 USE b2;
-
-CREATE TABLE orders (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    address TEXT NOT NULL,
-    payment_method VARCHAR(50) NOT NULL,
-    vodafone_number VARCHAR(20),
-    card_number VARCHAR(20),
-    expiry_date DATE,
-    cvv VARCHAR(10),
-    reg_date TIMESTAMP
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,        -- معرّف فريد لكل منتج
+    name VARCHAR(255) NOT NULL,               -- اسم المنتج
+    description TEXT,                         -- وصف المنتج
+    price DECIMAL(10, 2) NOT NULL,            -- سعر المنتج
+    image VARCHAR(255),                       -- رابط الصورة
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- وقت إنشاء السجل
 );
+
