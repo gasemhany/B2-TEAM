@@ -1,0 +1,171 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* تعيين خط Poppins كخط افتراضي */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة التوسيط الافتراضي */
+    line-height: 1.6; /* تعيين ارتفاع السطر لتوفير مسافة بين النصوص */
+    color: #530000; /* تعيين لون النص الأساسي */
+    background: #f4f4f4; /* تعيين الخلفية بلون رمادي فاتح */
+    resize: vertical; /* السماح بتغيير الحجم بشكل عمودي */
+    max-width: 100%; /* تعيين الحد الأقصى للعرض ليكون 100% */
+}
+
+a {
+    text-decoration: none; /* إزالة التسطير من الروابط */
+    color: inherit; /* تعيين اللون ليكون نفس لون النص المحيط */
+}
+
+h1, h2 {
+    text-align: center; /* محاذاة العناوين إلى المنتصف */
+}
+
+/* رأس الصفحة */
+header {
+    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني من الأسود إلى الأحمر الداكن */
+    color: rgb(255, 255, 255); /* تعيين لون النص ليكون أبيض */
+    padding: 10px 20px; /* إضافة مسافة داخلية للرأس */
+    display: flex; /* استخدام Flexbox لتوزيع المحتويات */
+    justify-content: space-between; /* توزيع المحتويات من اليسار واليمين */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    position: sticky; /* جعل الرأس ثابتًا عند التمرير */
+    top: 0; /* جعل الرأس يظهر دائمًا في الأعلى */
+    z-index: 1000; /* تحديد طبقة أعلى من باقي العناصر */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للرأس */
+}
+
+header .logo {
+    font-size: 1.8em; /* تكبير حجم الخط لاسم الشعار */
+    font-weight: bold; /* جعل النص عريض */
+    letter-spacing: 2px; /* إضافة مسافة بين الحروف */
+}
+
+header .nav-links {
+    list-style: none; /* إزالة التعداد النقطي من قائمة الروابط */
+    display: flex; /* استخدام Flexbox لترتيب الروابط بشكل أفقي */
+    gap: 20px; /* إضافة مسافة بين الروابط */
+}
+
+header .nav-links li {
+    margin: 0; /* إزالة المسافة بين العناصر */
+}
+
+header .nav-links a {
+    color: white; /* تعيين لون الروابط إلى الأبيض */
+    font-size: 1em; /* تعيين حجم الخط للروابط */
+    font-weight: bold; /* جعل الروابط عريضة */
+    transition: color 0.3s, transform 0.3s ease; /* إضافة تأثيرات للانتقال بين الحالة الطبيعية والحالة عند التفاعل */
+}
+
+header .nav-links a:hover {
+    color: #620000; /* تغيير لون الرابط عند التمرير عليه */
+    transform: scale(1.05); /* تكبير الرابط قليلًا عند التفاعل */
+}
+
+header .nav-links a.active {
+    color: #4a0000; /* تغيير اللون عند التحديد */
+}
+
+/* قسم عن الشركة */
+.about-section {
+    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مماثل للرأس */
+    padding: 60px 20px; /* إضافة مسافة داخلية */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+.about-section h2, .about-section p {
+    color: #ffffff; /* تعيين لون النص إلى الأبيض */
+}
+
+.about-section p {
+    font-size: 1.1em; /* تكبير حجم النص */
+    margin: 20px auto; /* إضافة مسافة بين الفقرات */
+    max-width: 600px; /* تحديد الحد الأقصى لعرض الفقرة */
+}
+
+/* قسم المنتجات */
+.products-section {
+    padding: 60px 20px; /* إضافة مسافة داخلية */
+    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مماثل لبقية الأقسام */
+}
+
+.products-section .product-grid {
+    display: flex; /* استخدام Flexbox لترتيب المنتجات بشكل أفقي */
+    flex-wrap: wrap; /* السماح بتغليف العناصر عندما لا توجد مساحة كافية */
+    justify-content: center; /* محاذاة العناصر إلى المنتصف */
+    gap: 20px; /* إضافة مسافة بين العناصر */
+}
+
+.product {
+    background: rgb(0, 0, 0); /* تعيين الخلفية إلى اللون الأسود */
+    border-radius: 10px; /* إضافة حواف دائرية للمنتجات */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للمنتجات */
+    padding: 20px; /* إضافة مسافة داخلية */
+    text-align: center; /* محاذاة النص في المنتصف */
+    width: 250px; /* تعيين عرض ثابت للمنتجات */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثيرات الحركة عند التفاعل */
+}
+
+.product:hover {
+    transform: scale(1.05); /* تكبير المنتج عند التمرير عليه */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* إضافة ظل أكبر عند التفاعل */
+}
+
+.product img {
+    max-width: 100%; /* تعيين عرض الصورة ليكون 100% من عرض العنصر */
+    border-radius: 10px; /* إضافة حواف دائرية للصورة */
+    margin-bottom: 15px; /* إضافة مسافة أسفل الصورة */
+}
+
+.product h3 {
+    font-size: 1.2em; /* تكبير حجم الخط لعنوان المنتج */
+    margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+
+.product .btn {
+    background: #650000; /* تعيين لون خلفية الزر إلى الأحمر الداكن */
+    color: rgb(0, 0, 0); /* تعيين لون النص في الزر إلى الأسود */
+    padding: 10px 15px; /* إضافة مسافة داخلية للزر */
+    font-size: 1em; /* تعيين حجم الخط للزر */
+    border: none; /* إزالة الحد حول الزر */
+    border-radius: 5px; /* إضافة حواف دائرية للزر */
+    transition: background 0.3s ease; /* إضافة تأثير للانتقال بين الألوان عند التفاعل */
+}
+
+.product .btn:hover {
+    background: #660000; /* تغيير اللون عند التمرير على الزر */
+}
+
+/* الفوتر */
+.main-footer {
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 20px 0; /* إضافة مسافة داخلية */
+    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مشابه لبقية الأقسام */
+    color: white; /* تعيين لون النص إلى الأبيض */
+    font-size: 1em; /* تعيين حجم الخط */
+    position: relative; /* تحديد الوضع النسبي للعنصر */
+}
+
+h3 {
+    color: #4a0000; /* تعيين لون العناوين الفرعية إلى الأحمر الداكن */
+}
+
+h1 {
+    color: #4a0000; /* تعيين لون العنوان الرئيسي إلى الأبيض */
+}
+
+/* تنسيق الإدخال و الاختيارات */
+input, select {
+    width: 50%; /* تعيين العرض إلى 100% */
+    padding: 10px; /* إضافة مسافة داخلية */
+    margin: 5px 0; /* إضافة مسافة بين الحقول */
+    border-radius: 5px; /* إضافة حواف دائرية */
+    font-size: 1em; /* تعيين حجم الخط */
+}
+
+select {
+    background-color: #ffffff; /* تعيين لون الخلفية لقائمة الاختيارات إلى الأبيض */
+}
+
+option {
+    color: rgb(0, 0, 0); /* تعيين لون النص في خيارات الاختيار إلى الأسود */
+}
