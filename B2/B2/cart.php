@@ -1,53 +1,104 @@
 <?php
 session_start();
-$cart = $_SESSION['cart'] ?? [];
-$totalPrice = 0;
+include 'db_connection.php';
 
-foreach ($cart as $item) {
-    $totalPrice += $item['price'] * $item['quantity'];
+// تحقق من العربة في الجلسة
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
 }
+
+// إضافة منتج إلى العربة
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+
+    // جلب معلومات المنتج من قاعدة البيانات
+    $sql = "SELECT * FROM products WHERE id = $product_id";
+    $result = $conn->query($sql);
+    $product = $result->fetch_assoc();
+
+    if ($product) {
+        // تحقق إذا كان المنتج موجودًا بالفعل في العربة
+        $found = false;
+        foreach ($_SESSION['cart'] as &$item) {
+            if ($item['id'] == $product_id) {
+                $item['quantity']++;
+                $found = true;
+                break;
+            }
+        }
+
+        // إذا لم يكن موجودًا، أضفه للعربة
+        if (!$found) {
+            $product['quantity'] = 1;
+            $_SESSION['cart'][] = $product;
+        }
+    }
+}
+
+// حذف منتج من العربة
+if (isset($_POST['remove_from_cart'])) {
+    $product_id = $_POST['product_id'];
+    foreach ($_SESSION['cart'] as $key => $item) {
+        if ($item['id'] == $product_id) {
+            unset($_SESSION['cart'][$key]);
+            break;
+        }
+    }
+}
+
+// عرض محتويات العربة
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - B2 Store</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>عربة التسوق</title>
 </head>
 <body>
-    <header>
-        <div class="logo">B2 Store</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.php">Products</a></li>
-                <li><a href="cart.php" class="active">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="cart">
-            <h1>Your Cart</h1>
-            <?php if (!empty($cart)): ?>
-                <table>
-                    <thead>
+    <h1>عربة التسوق</h1>
+    <div>
+        <?php if (empty($_SESSION['cart'])) { ?>
+            <p>العربة فارغة</p>
+        <?php } else { ?>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>اسم المنتج</th>
+                        <th>السعر</th>
+                        <th>الكمية</th>
+                        <th>المجموع</th>
+                        <th>إجراء</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($_SESSION['cart'] as $item) { ?>
                         <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
+                            <td><?php echo $item['name']; ?></td>
+                            <td><?php echo $item['price']; ?> جنيه</td>
+                            <td><?php echo $item['quantity']; ?></td>
+                            <td><?php echo $item['price'] * $item['quantity']; ?> جنيه</td>
+                            <td>
+                                <form method="post" action="cart.php">
+                                    <input type="hidden" name="product_id" value="<?php echo $item['id']; ?>">
+                                    <button type="submit" name="remove_from_cart">حذف</button>
+                                </form>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($cart as $item): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($item['name']) ?></td>
-                                <td>$<?= number_format($item['price'], 2) ?></td>
-                                <td><?= htmlspecialchars($item['quantity']) ?></td>
-                                <td>$<?= number_format($item['price'] * $item['quantity'], 2) ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                    <?php } ?>
+                </tbody>
+            </table>
+            <p><strong>الإجمالي الكلي:</strong> 
+                <?php 
+                    $total = 0;
+                    foreach ($_SESSION['cart'] as $item) {
+                        $total += $item['price'] * $item['quantity'];
+                    }
+                    echo $total . " ريال";
+                ?>
+            </p>
+        <?php } ?>
+    </div>
+    <a href="products.php">العودة إلى المنتجات</a>
+</body>
+</html>
