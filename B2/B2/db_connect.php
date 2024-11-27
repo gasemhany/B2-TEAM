@@ -1,22 +1,21 @@
 <?php
-// إعدادات الاتصال بقاعدة البيانات
-$servername = "localhost"; // عادة ما يكون localhost
-$username = "root";        // اسم المستخدم (عادةً root في localhost)
-$password = "";            // كلمة المرور (إذا لم يكن لديك كلمة مرور اتركها فارغة)
-$dbname = "b2";            // اسم قاعدة البيانات التي قمت بإنشائها
+// معلومات الاتصال بقاعدة البيانات
+$host = 'localhost'; // عنوان السيرفر (عادة يكون localhost)
+$dbname = 'b2'; // اسم قاعدة البيانات
+$username = 'root'; // اسم المستخدم لقاعدة البيانات
+$password = ''; // كلمة مرور المستخدم (تكون فارغة في بيئات مثل XAMPP أو MAMP)
 
 try {
     // إنشاء الاتصال باستخدام PDO
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     
-    // تعيين وضع الخطأ ليكون استثناءات
+    // تعيين إعدادات PDO لإظهار الأخطاء إذا حدثت
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // رسالة تأكيد إذا تم الاتصال بنجاح
-    echo "تم الاتصال بقاعدة البيانات بنجاح";
-}
-catch (PDOException $e) {
-    // في حالة حدوث خطأ
-    echo "خطأ في الاتصال: " . $e->getMessage();
+    // رسالة اختبار للاتصال الناجح
+    // echo "تم الاتصال بنجاح!";
+} catch (PDOException $e) {
+    // إذا فشل الاتصال، يتم عرض رسالة الخطأ
+    echo "فشل الاتصال بقاعدة البيانات: " . $e->getMessage();
 }
 ?>
