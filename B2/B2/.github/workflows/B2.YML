@@ -16,9 +16,9 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "gosemhan" # استبدل باسم المستخدم الفعلي
-          git config user.email "your-email@example.com" # استبدل بالبريد الإلكتروني الفعلي
-          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/gasemhany/B2.git # استبدل بالقيم الصحيحة
+          git config user.name "gasem_hany" # استبدل باسم المستخدم الفعلي
+          git config user.email "gasemar684@gmial.com" # استبدل بالبريد الإلكتروني الفعلي
+          git remote set-url origin https://${{ secrets.B2}}@github.com/gasemhany/B2.git # استبدل بالقيم الصحيحة
 
       - name: Run B2 Tasks
         run: |
