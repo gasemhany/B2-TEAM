@@ -19,9 +19,9 @@
     </header>
 
     <section id="payment">
-        <div class="container">
+      <div class="container">
             <h1>Complete Your Payment</h1>
-            <form id="payment-form">
+            <form id="payment-form" method="POST" action="process_payment.php">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -42,8 +42,6 @@
                     <div class="payment-option">
                         <input type="radio" id="credit-card" name="payment-method" value="Credit Card" required>
                         <img src="./IMG/card.png" alt="Credit Card" width="40" height="40">
-                        <img src="./IMG/visa.png" alt="Visa" width="40" height="40">
-                        <img src="IMG/images.png" alt="Other Payment" width="60" height="50">
                         <label for="credit-card">Credit Card</label>
                     </div>
                     <div class="payment-option">
@@ -58,6 +56,15 @@
                     </div>
                 </div>
 
+                <!-- Input for Vodafone Payment -->
+                <div id="vodafone-input" class="hidden">
+                    <div class="form-group">
+                        <label for="vodafone-number">Vodafone Number</label>
+                        <input type="text" id="vodafone-number" name="vodafone-number" placeholder="Enter Vodafone Number" required>
+                    </div>
+                </div>
+
+                <!-- Credit Card details -->
                 <div id="credit-card-details" class="hidden">
                     <h3>Credit Card Details</h3>
                     <div class="form-group">
@@ -85,24 +92,34 @@
 
     <script src="script.js"></script>
     <script>
-        // JavaScript to toggle credit card details
+        // JavaScript to toggle credit card details and Vodafone input
         const creditCardOption = document.getElementById('credit-card');
         const creditCardDetails = document.getElementById('credit-card-details');
+        const vodafoneOption = document.getElementById('vodafone');
+        const vodafoneInput = document.getElementById('vodafone-input');
+        const codOption = document.getElementById('cod');
 
         creditCardOption.addEventListener('change', function() {
             if (creditCardOption.checked) {
                 creditCardDetails.classList.remove('hidden');
+                vodafoneInput.classList.add('hidden');
             }
         });
 
-        const paymentOptions = document.querySelectorAll('input[name="payment-method"]');
-        paymentOptions.forEach(option => {
-            option.addEventListener('change', function() {
-                if (this.value !== 'Credit Card') {
-                    creditCardDetails.classList.add('hidden');
-                }
-            });
+        vodafoneOption.addEventListener('change', function() {
+            if (vodafoneOption.checked) {
+                vodafoneInput.classList.remove('hidden');
+                creditCardDetails.classList.add('hidden');
+            }
         });
+
+        codOption.addEventListener('change', function() {
+            if (codOption.checked) {
+                creditCardDetails.classList.add('hidden');
+                vodafoneInput.classList.add('hidden');
+            }
+        });
+        
     </script>
 </body>
 </html>
