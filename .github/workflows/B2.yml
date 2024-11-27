@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # الخطوة 1: تنزيل المستودع
-      - name: Checkout Repository
+      - name: Checkout B2
         uses: actions/checkout@v3
 
       # الخطوة 2: إعداد Git
