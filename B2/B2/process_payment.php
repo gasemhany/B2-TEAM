@@ -40,4 +40,7 @@ if ($conn->query($sql) === TRUE) {
 
 // إغلاق الاتصال
 $conn->close();
+include 'db_connect.php';
 ?>
+
+

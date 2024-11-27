@@ -5,7 +5,10 @@ include 'db_connection.php';
 // جلب المنتجات
 $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
+include 'db_connect.php';
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="ar">

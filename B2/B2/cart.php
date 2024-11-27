@@ -44,6 +44,7 @@ if (isset($_POST['remove_from_cart'])) {
             break;
         }
     }
+    include 'db_connect.php';
 }
 
 // عرض محتويات العربة
