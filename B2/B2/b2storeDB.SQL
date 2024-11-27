@@ -1,4 +1,4 @@
-CREATE DATABASE payment_db;
+CREATE DATABASE b2;
 
 USE b2;
 
