@@ -16,12 +16,13 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "gasem_hany" # استبدل باسم المستخدم الفعلي
-          git config user.email "gasemar684@gmial.com" # استبدل بالبريد الإلكتروني الفعلي
-          git remote set-url origin https://${{ secrets.B2}}@github.com/gasemhany/B2.git # استبدل بالقيم الصحيحة
+          git config user.name "gasem_hany" # استبدل باسم المستخدم الفعلي الخاص بك
+          git config user.email "gasemar684@gmail.com" # استبدل بالبريد الإلكتروني الخاص بك
+          git remote set-url origin https://${{ secrets.B2 }}@github.com/gasemhany/B2.git # تأكد من صحة اسم المستودع واسم المستخدم
 
       - name: Run B2 Tasks
         run: |
           echo "Executing simple auto-refresh tasks..."
+          git config pull.rebase false # تفعيل خيار الدمج الافتراضي
           git pull
           git push
