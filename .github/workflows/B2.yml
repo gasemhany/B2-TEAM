@@ -1,4 +1,4 @@
-name: B2
+name: Auto Refresh B2 Repository
 
 on:
   schedule:
@@ -11,18 +11,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # الخطوة 1: تنزيل المستودع
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # الخطوة 2: إعداد Git
       - name: Configure Git
         run: |
-          git config user.name "gasem_hany" # استبدل باسم المستخدم الفعلي الخاص بك
+          git config user.name "gasemhany" # استبدل باسم المستخدم الخاص بك
           git config user.email "gasemar684@gmail.com" # استبدل بالبريد الإلكتروني الخاص بك
-          git remote set-url origin https://${{ secrets.B2 }}@github.com/gasemhany/B2.git # تأكد من صحة اسم المستودع واسم المستخدم
+          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/gasemhany/B2.git # استبدل بالمستودع الخاص بك
 
-      - name: Run B2 Tasks
+      # الخطوة 3: تحديث المستودع ودفع التعديلات
+      - name: Pull and Push Changes
         run: |
-          echo "Executing simple auto-refresh tasks..."
-          git config pull.rebase false # تفعيل خيار الدمج الافتراضي
-          git pull
-          git push
+          echo "Executing auto-refresh tasks..."
+          git config pull.rebase false  # تفعيل الدمج الافتراضي لتجنب المشاكل
+          git pull origin main          # جلب التغييرات من الفرع الرئيسي
+          git push origin main          # دفع التحديثات مرة أخرى
