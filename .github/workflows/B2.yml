@@ -20,7 +20,7 @@ jobs:
         run: |
           git config user.name "gasem_hany" # استبدل باسم المستخدم الخاص بك
           git config user.email "gasemar684@gmail.com" # استبدل بالبريد الإلكتروني الخاص بك
-          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/gasemhany/B2-TEAM.git # اسم المستودع الجديد
+          git remote set-url origin https://github.com/gasemhany/B2-TEAM # اسم المستودع الجديد
 
       # الخطوة 3: تحديث المستودع ودفع التعديلات
       - name: Pull and Push Changes
