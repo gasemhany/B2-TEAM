@@ -25,6 +25,7 @@
         <div class="product-grid">
             <!-- Loop Example for Products -->
             <!-- Add dynamic IDs and Classes -->
+             <form action="process_products.php" method="post">
             <div class="product" data-product-id="1" data-price="550">
                 <img src="./IMG/WhatsApp Image 2024-11-17 at 16.13.26_56ac1829.jpg" alt="Product 1">
                 <h3>MOON</h3>
@@ -234,6 +235,7 @@
                 </select>
                 <p class="price-display">Price: 550 LE</p>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
+            </form>
             </div>
     </div>
 
@@ -259,6 +261,26 @@
                 priceDisplay.textContent = `Price: ${totalPrice} LE`;
             });
         });
+        function sendProducts() {
+            // إنشاء قائمة المنتجات
+            const products = [
+                { name: "منتج 1", quantity: document.getElementById('quantity1').value },
+                { name: "منتج 2", quantity: document.getElementById('quantity2').value },
+                { name: "منتج 3", quantity: document.getElementById('quantity3').value }
+            ];
+
+            // إرسال البيانات باستخدام AJAX
+            fetch('process_products.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(products)
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').innerHTML = data;
+            })
+            .catch(error => console.error('خطأ:', error));
+        }
     </script>
      <?php include 'data.php'; ?>
 </body>
