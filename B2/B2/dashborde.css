@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header with Background Gradient */
+.main-header {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-header .logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #5b0000; /* Change color on hover */
+}
+
+/* Admin Dashboard Section */
+#admin-dashboard {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #4a0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #000000, #4a0000);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Footer Styles */
+.main-footer {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+tr{
+        color: white
+}
+td{
+    color: white;
+}
+section{
+    color:white;
+}
+th{color: white;}

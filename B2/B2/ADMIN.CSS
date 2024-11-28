@@ -71,7 +71,7 @@ input[type="text"], input[type="password"] {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #ffffff;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1rem;
 }
 
