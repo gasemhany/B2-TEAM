@@ -22,10 +22,11 @@
     <section id="products" class="products-section">
         <h1>Welcome to B2 Store</h1>
         <h2>Our Products</h2>
+        <form action="process_products.php" method="post"></form>
         <div class="product-grid">
             <!-- Loop Example for Products -->
             <!-- Add dynamic IDs and Classes -->
-             <form action="process_products.php" method="post">
+             
             <div class="product" data-product-id="1" data-price="550">
                 <img src="./IMG/WhatsApp Image 2024-11-17 at 16.13.26_56ac1829.jpg" alt="Product 1">
                 <h3>MOON</h3>
@@ -235,8 +236,9 @@
                 </select>
                 <p class="price-display">Price: 550 LE</p>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </form>
-            </div>
+           
+            </div> 
+        </form>
     </div>
 
             <!-- Repeat similar structure for all 16 products -->

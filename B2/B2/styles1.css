@@ -5,6 +5,7 @@ body {
     padding: 0; /* إزالة التوسيط الافتراضي */
     background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني من الأسود إلى الأحمر الداكن كخلفية للصفحة */
     color: #ffffff; /* تعيين لون النص الأساسي */
+   
 }
 
 /* رأس الصفحة */
@@ -163,3 +164,31 @@ footer {
     color: #fff; /* تعيين لون النص إلى الأبيض */
     margin-top: 40px; /* إضافة مسافة من الأعلى */
 }
+/* تعديل حجم الحقول */
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* تعديل زر الإرسال */
+button {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    
+}
+
