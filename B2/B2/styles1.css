@@ -183,6 +183,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    inline-size: inherit;
 }
 
 button:hover {

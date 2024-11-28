@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator - B2 Store</title>
+    <link rel="stylesheet" href="ADMIN.CSS">
+    <link rel="icon" href="IMG/B2.jpg">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">B2 STORE</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Administrator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin Section -->
+    <section id="admin-section">
+        <h1>Administrator Login</h1>
+
+        <!-- Admin login form -->
+        <form action="admin_process.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Admin Dashboard Section (only shown after login) -->
+        <div id="admin-dashboard" style="display:none;">
+            <h2>Admin Dashboard</h2>
+            <p>Welcome, Admin! Here you can manage products.</p>
+            <button id="add-product">Add New Product</button>
+            <button id="delete-product">Delete Product</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <p>&copy; 2024 B2 STORE | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript for form submission and dashboard visibility -->
+    <script>
+        // Example: You can use JavaScript to hide/show the admin dashboard
+        const adminForm = document.querySelector('form');
+        const adminDashboard = document.getElementById('admin-dashboard');
+
+        adminForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple admin login check (you can replace this with a server-side check)
+            if (username === 'admin' && password === 'adminpassword') {
+                adminDashboard.style.display = 'block'; // Show admin dashboard
+                alert('Login successful!');
+            } else {
+                alert('Incorrect username or password!');
+            }
+        });
+    </script>
+</body>
+</html>
