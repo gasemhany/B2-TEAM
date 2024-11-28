@@ -96,7 +96,7 @@ button[type="submit"]:hover {
 .main-footer {
     text-align: center;
     padding: 20px;
-    background-color: #000;
+    background: linear-gradient(135deg, #000000, #4a0000);
     position: fixed;
     width: 100%;
     bottom: 0;
