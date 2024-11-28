@@ -1,0 +1,19 @@
+body{
+color: white;
+    background: linear-gradient(135deg, #000000, #4a0000);
+background-attachment: fixed;
+
+margin-top: 200px ;
+}
+h1{
+    text-align: center;
+}
+form{
+
+    text-align: center;
+}
+
+input{
+    width: 50%;
+    height: auto;
+}
