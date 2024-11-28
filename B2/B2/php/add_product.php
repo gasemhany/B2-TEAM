@@ -1,9 +1,9 @@
 <?php
-// إعدادات الاتصال
+// اتصال بقاعدة البيانات
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "b2";
+$username = "root"; // اسم المستخدم لقاعدة البيانات
+$password = ""; // كلمة المرور
+$dbname = "b2"; // اسم قاعدة البيانات
 
 // إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,25 +13,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// التحقق إذا كان النموذج قد تم إرساله
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // الحصول على البيانات من النموذج
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+// معالجة البيانات المرسلة عبر POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $product_name = $_POST['product_name'];
     $price = $_POST['price'];
+    $description = $_POST['description'];
+    $category = $_POST['category'];
 
-    // معالجة صورة المنتج
-    $image = $_FILES['image']['name'];
-    $target_dir = "images/";
-    $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-
-    // استعلام لإدخال المنتج في قاعدة البيانات
-    $sql = "INSERT INTO products (name, description, price, image) 
-            VALUES ('$name', '$description', '$price', '$image')";
+    // إدخال البيانات إلى قاعدة البيانات
+    $sql = "INSERT INTO products (product_name, price, description, category)
+            VALUES ('$product_name', '$price', '$description', '$category')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New product added successfully";
+        echo "Product added successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -39,3 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
+<!-- نموذج إضافة المنتج -->
+<form action="add_product.php" method="POST">
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" required><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea><br><br>
+
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" required><br><br>
+
+    <button type="submit">Add Product</button>
+</form>
