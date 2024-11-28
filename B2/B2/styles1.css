@@ -5,7 +5,6 @@ body {
     padding: 0; /* إزالة التوسيط الافتراضي */
     background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني من الأسود إلى الأحمر الداكن كخلفية للصفحة */
     color: #ffffff; /* تعيين لون النص الأساسي */
-   
 }
 
 /* رأس الصفحة */
@@ -184,11 +183,9 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
 }
 
 button:hover {
     background: linear-gradient(135deg, #000000, #4a0000);
-    
 }
 
