@@ -2,8 +2,8 @@
 // الاتصال بقاعدة البيانات
 $servername = "localhost";
 $username = "root"; // اسم المستخدم لقاعدة البيانات
-$password = ""; // كلمة المرور
-$dbname = "b2"; // اسم قاعدة البيانات
+$password = "HDhHLkr360p7n8b5c!v1Zc9="; // كلمة المرور
+$dbname = "s2709239_B2store"; // اسم قاعدة البيانات
 
 // إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname);
