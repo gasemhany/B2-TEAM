@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <div class="logo">B2 STORE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-section">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-container">
+            <!-- Example product 1 -->
+            <div class="cart-item" data-price="550">
+                <img src="IMG/product1.jpg" alt="Product 1">
+                <div class="item-details">
+                    <h2>Product 1</h2>
+                    <p>Price: <span class="price">550 LE</span></p>
+                    <p>Quantity:</p>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </div>
+                <button class="remove-btn">Remove</button>
+            </div>
+
+            <!-- Example product 2 -->
+            <div class="cart-item" data-price="550">
+                <img src="IMG/product2.jpg" alt="Product 2">
+                <div class="item-details">
+                    <h2>Product 2</h2>
+                    <p>Price: <span class="price">550 LE</span></p>
+                    <p>Quantity:</p>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </div>
+                <button class="remove-btn">Remove</button>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Summary</h2>
+                <p>Subtotal: LE<span id="subtotal">0</span></p>
+                <p>Tax (5%): LE<span id="tax">0</span></p>
+                <p><strong>Total: LE<span id="total">0</span></strong></p>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 B2 Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to update the price of each cart item and the cart totals
+        function updateCart() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            let subtotal = 0;
+
+            cartItems.forEach(item => {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                const totalPrice = price * quantity;
+                
+                // Update the price for the current item
+                item.querySelector('.price').textContent = totalPrice.toFixed(2) + " LE";  // Update price in the item
+
+                subtotal += totalPrice;
+            });
+
+            const tax = subtotal * 0.05; // 5% tax
+            const total = subtotal + tax;
+
+            // Update the cart summary
+            document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+            document.getElementById('tax').textContent = tax.toFixed(2);
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+
+        // Initialize cart functionality
+        window.addEventListener('DOMContentLoaded', () => {
+            // Attach event listeners to quantity inputs
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('input', updateCart);
+            });
+
+            // Attach event listeners to "Remove" buttons
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove the cart item from the DOM
+                    const cartItem = this.closest('.cart-item');
+                    cartItem.remove();
+
+                    // Update the cart totals after removal
+                    updateCart();
+                });
+            });
+
+            // Initialize the cart totals on page load
+            updateCart();
+        });
+    </script>
+</body>
+</html>

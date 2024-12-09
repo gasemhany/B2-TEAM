@@ -1,8 +1,8 @@
 -- 1. إنشاء قاعدة البيانات
-CREATE DATABASE b2;
+CREATE DATABASE u2709239_xBCLgEiBkY2;
 
 -- 2. تحديد قاعدة البيانات للعمل عليها
-USE b2;
+USE u2709239_xBCLgEiBkY;
 
 -- 3. إنشاء جدول المستخدمين
 CREATE TABLE users (

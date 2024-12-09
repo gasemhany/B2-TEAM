@@ -1,0 +1,170 @@
+/* cart.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: white;
+}
+
+header {
+    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني من الأسود إلى الأحمر الداكن */
+    color: rgb(255, 255, 255); /* تعيين لون النص ليكون أبيض */
+    padding: 10px 20px; /* إضافة مسافة داخلية للرأس */
+    display: flex; /* استخدام Flexbox لتوزيع المحتويات */
+    justify-content: space-between; /* توزيع المحتويات من اليسار واليمين */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    position: sticky; /* جعل الرأس ثابتًا عند التمرير */
+    top: 0; /* جعل الرأس يظهر دائمًا في الأعلى */
+    z-index: 1000; /* تحديد طبقة أعلى من باقي العناصر */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للرأس */
+}
+
+header .logo {
+    font-size: 1.8em; /* تكبير حجم الخط لاسم الشعار */
+    font-weight: bold; /* جعل النص عريض */
+    letter-spacing: 2px; /* إضافة مسافة بين الحروف */
+}
+
+nav ul {
+    list-style: none; /* إزالة التعداد النقطي من قائمة الروابط */
+    display: flex; /* استخدام Flexbox لترتيب الروابط بشكل أفقي */
+    gap: 20px; /* إضافة مسافة بين الروابط */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #91000c;
+}
+
+.cart-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cart-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cart-item {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.cart-item:hover {
+    transform: translateY(-5px);
+}
+
+.cart-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.item-details {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.item-details h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.cart-item input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.remove-btn {
+    background-color: #5a0007;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #660416;
+}
+
+.cart-summary {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.checkout-btn {
+    background-color: #500007;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #560010;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: white;
+    margin-top: 20px;
+}

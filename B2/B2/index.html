@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="IMG/B2.jpg">
       <!-- Add the Admin Link -->
-      <li><a href="admin.html">Administrator</a></li>
 </head>
 <body>
     <header class="main-header">
         <div class="logo">B2 STORE</div>
+        
         <nav>
             <ul class="nav-links">
+                <li><a href="cart.html"><img src="IMG/shopping-cart.png" alt="" width="40px" height="40px" ><span>0</span></a></li>
                 <li><a href="#products">Products</a></li>
-                <a href="https://www.instagram.com/b2__.store/">Instagram</a>
+                <li><a href="https://www.instagram.com/b2__.store/">Instagram</a></li>
                 <li><a href="Cooming Soon">Cooming Soon</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -24,10 +26,10 @@
     <section id="products" class="products-section">
         <h1>Welcome to B2 Store</h1>
         <h2>Our Products</h2>
-        <form action="process_products.php" method="post"></form>
         <div class="product-grid">
             <!-- Loop Example for Products -->
             <!-- Add dynamic IDs and Classes -->
+             <form action="/php/products.php" method="post"></form>
             <div class="product" data-product-id="1" data-price="550">
                 <img src="./IMG/WhatsApp Image 2024-11-17 at 16.13.26_56ac1829.jpg" alt="Product 1">
                 <h3>MOON</h3>
@@ -39,7 +41,8 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
+                <a href="payment.html"><button class="btn" >Buy Now</button></a>
             </div>
 
             <div class="product" data-product-id="2" data-price="550">
@@ -53,6 +56,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -66,6 +70,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -79,7 +84,8 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
-                <a href=""><button class="btn">Buy Now</button></a>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
+                <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
                 <img src="IMG/lacasa.png" alt="Product 5">
@@ -92,6 +98,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -105,6 +112,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -118,6 +126,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -131,6 +140,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -144,8 +154,8 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
-                <a href="payment.html
-                "><button class="btn">Buy Now</button></a>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
+               <a href="payment.html   "><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
                 <img src="img/palestien3.png" alt="Product 10">
@@ -158,6 +168,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -171,6 +182,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -184,6 +196,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -197,6 +210,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -210,6 +224,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -223,6 +238,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
             <div class="product" data-product-id="2" data-price="550">
@@ -236,6 +252,7 @@
                     <option value="X2Large">X2Large</option>
                 </select>
                 <p class="price-display">Price: 550 LE</p>
+                <a href="cart.html"><button class="btn">Add Cart</button></a>
                 <a href="payment.html"><button class="btn">Buy Now</button></a>
             </div>
         </form>

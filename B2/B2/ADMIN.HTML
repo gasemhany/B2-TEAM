@@ -3,72 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrator - B2 Store</title>
-    <link rel="stylesheet" href="ADMIN.CSS">
-    <link rel="icon" href="IMG/B2.jpg">
+    <title>Admin Dashboard - B2 Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* التصميم الأساسي */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #4a0000);
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000000, #4a0000);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #fff;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: #fff;
+            background: #f2a365;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .actions a:hover {
+            background: #d18b4a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="main-header">
-        <div class="logo">
-            <a href="index.html">B2 STORE</a>
-        </div>
+    <header>
+        <div class="logo">B2 Store Admin</div>
         <nav>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="admin.html">Administrator</a></li>
+                <li><a href="admin_dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Admin Section -->
-    <section id="admin-section">
-        <h1>Administrator Login</h1>
-
-        <!-- Admin login form -->
-        <form action="admin_process.php" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-
-        <!-- Admin Dashboard Section (only shown after login) -->
-        <div id="admin-dashboard" style="display:none;">
-            <h2>Admin Dashboard</h2>
-            <p>Welcome, Admin! Here you can manage products.</p>
-            <button id="add-product">Add New Product</button>
-            <button id="delete-product">Delete Product</button>
+    <div class="container">
+        <h1>Welcome to Admin Dashboard</h1>
+        <div class="actions">
+            <a href="add_product.php">Add Product</a>
+            <a href="edit_product.php">Edit Product</a>
+            <a href="delete_product.php">Delete Product</a>
+            <a href="view_products.php">View All Products</a>
+            <a href="manage_orders.php">Manage Orders</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer Section -->
-    <footer class="main-footer">
-        <p>&copy; 2024 B2 STORE | All Rights Reserved</p>
+    <footer>
+        <p>&copy; 2024 B2 Store | All Rights Reserved</p>
     </footer>
-
-    <!-- JavaScript for form submission and dashboard visibility -->
-    <script>
-        // Example: You can use JavaScript to hide/show the admin dashboard
-        const adminForm = document.querySelector('form');
-        const adminDashboard = document.getElementById('admin-dashboard');
-
-        adminForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Simple admin login check (you can replace this with a server-side check)
-            if (username === 'admin' && password === 'adminpassword') {
-                adminDashboard.style.display = 'block'; // Show admin dashboard
-                alert('Login successful!');
-            } else {
-                alert('Incorrect username or password!');
-            }
-        });
-    </script>
 </body>
 </html>

@@ -1,61 +1,69 @@
 <?php
-// إعدادات الاتصال بقاعدة البيانات
-$servername = "localhost";
-$username = "root";
-$password = "HDhHLkr360p7n8b5c!v1Zc9=";
-$dbname = "s2709239_B2store";
+// اتصال بقاعدة البيانات
+$conn = new mysqli('localhost', 'root', '', 's2719155_Bb2'); // استخدام قاعدة البيانات الجديدة s2719155_Bb2
 
-// إنشاء الاتصال
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// التحقق من الاتصال
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// تعيين الترميز إلى UTF-8
-$conn->set_charset("utf8");
-
-// معالجة البيانات المرسلة عبر POST
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // استقبال البيانات من النموذج
-    $product_name = $_POST['product_name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-
-    // استخدام الاستعلامات المحضرة (Prepared Statements)
-    $stmt = $conn->prepare("INSERT INTO products (product_name, price, description, category) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("sdss", $product_name, $price, $description, $category);
-
-    // تنفيذ الاستعلام والتحقق من النتيجة
-    if ($stmt->execute()) {
-        echo "Product added successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
+// معالجة بيانات النموذج
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // التحقق من المدخلات
+    $product_name = trim($_POST['product_name']);
+    $price = trim($_POST['price']);
+    $description = trim($_POST['description']);
+    $quantity = trim($_POST['quantity']);
+    
+    // التحقق من وجود القيم المدخلة
+    if (empty($product_name) || empty($price) || empty($description) || empty($quantity)) {
+        echo "<script>alert('Please fill in all fields.');</script>";
+        exit();
     }
 
-    // إغلاق الاستعلام
-    $stmt->close();
+    // التحقق من صحة السعر والكمية
+    if (!is_numeric($price) || !is_numeric($quantity)) {
+        echo "<script>alert('Price and quantity must be numeric.');</script>";
+        exit();
+    }
+
+    // التحقق من رفع صورة
+    if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] == 0) {
+        $image_name = $_FILES['product_image']['name'];
+        $image_tmp_name = $_FILES['product_image']['tmp_name'];
+        $upload_dir = "uploads/";
+
+        // تحقق من نوع الملف
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        $file_type = mime_content_type($image_tmp_name);
+
+        if (!in_array($file_type, $allowed_types)) {
+            echo "<script>alert('Only JPG, PNG, and GIF files are allowed.');</script>";
+            exit();
+        }
+
+        // تعيين اسم جديد للصورة
+        $new_image_name = uniqid() . "_" . basename($image_name);
+        $target_file = $upload_dir . $new_image_name;
+
+        // رفع الصورة
+        if (move_uploaded_file($image_tmp_name, $target_file)) {
+            // إدخال المنتج في قاعدة البيانات باستخدام prepared statements
+            $stmt = $conn->prepare("INSERT INTO products (name, price, description, quantity, image) 
+                                    VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sdsss", $product_name, $price, $description, $quantity, $target_file);
+
+            if ($stmt->execute()) {
+                echo "<script>alert('Product added successfully!');</script>";
+            } else {
+                echo "<script>alert('Error adding product: " . $stmt->error . "');</script>";
+            }
+
+            $stmt->close();
+        } else {
+            echo "<script>alert('Error uploading image.');</script>";
+        }
+    }
 }
 
-// إغلاق الاتصال بقاعدة البيانات
 $conn->close();
 ?>
-
-<!-- نموذج إضافة المنتج -->
-<form action="add_product.php" method="POST">
-    <label for="product_name">Product Name:</label>
-    <input type="text" id="product_name" name="product_name" required><br><br>
-
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" step="0.01" required><br><br>
-
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea><br><br>
-
-    <label for="category">Category:</label>
-    <input type="text" id="category" name="category" required><br><br>
-
-    <button type="submit">Add Product</button>
-</form>

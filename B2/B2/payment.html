@@ -19,7 +19,7 @@
     </header>
 
     <section id="payment">
-      <div class="container">
+        <div class="container">
             <h1>Complete Your Payment</h1>
             <form id="payment-form">
                 <div class="form-group">
@@ -51,6 +51,12 @@
                         <img src="IMG/vodafone.png" alt="Vodafone payment method icon" width="40" height="40">
                         <label for="vodafone">Vodafone</label>
                     </div>
+                    <div id="vodafone-details" class="hidden">
+                        <div class="form-group">
+                            <label for="vodafone-number">Vodafone Number</label>
+                            <input type="text" id="vodafone-number" name="vodafone-number" placeholder="Enter your Vodafone number">
+                        </div>
+                    </div>
                     <div class="payment-option">
                         <input type="radio" id="cod" name="payment-method" value="Cash on Delivery">
                         <img src="./IMG/payment-method.png" alt="Cash on Delivery payment method icon" width="40" height="40">
@@ -73,10 +79,6 @@
                         <input type="text" id="cvv" name="cvv" placeholder="123" required>
                     </div>
                 </div>
-               
-                <iframe src="https://accept.paymob.com/api/acceptance/iframes/884500?payment_token={payment_key_obtained_previously}
-
-                " frameborder="0"></iframe>
 
                 <button type="submit" class="pay-btn">Submit Payment</button>
             </form>
@@ -87,74 +89,39 @@
         <p>Contact us at: support@B2STORE.com</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // JavaScript to toggle credit card details
-        const creditCardOption = document.getElementById('credit-card');
-        const creditCardDetails = document.getElementById('credit-card-details');
-
-        creditCardOption.addEventListener('change', function() {
-            if (creditCardOption.checked) {
-                creditCardDetails.classList.remove('hidden');
-            }
-        });
-
+        // Toggle visibility of payment method details
         const paymentOptions = document.querySelectorAll('input[name="payment-method"]');
+        const creditCardDetails = document.getElementById('credit-card-details');
+        const vodafoneDetails = document.getElementById('vodafone-details');
+
         paymentOptions.forEach(option => {
-            option.addEventListener('change', function() {
-                if (this.value !== 'Credit Card') {
+            option.addEventListener('change', function () {
+                if (this.value === 'Credit Card') {
+                    creditCardDetails.classList.remove('hidden');
+                    vodafoneDetails.classList.add('hidden');
+                } else if (this.value === 'Vodafone') {
+                    vodafoneDetails.classList.remove('hidden');
                     creditCardDetails.classList.add('hidden');
+                } else {
+                    creditCardDetails.classList.add('hidden');
+                    vodafoneDetails.classList.add('hidden');
                 }
             });
         });
+
+        // Handle form submission
         const paymentForm = document.getElementById('payment-form');
-    paymentForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // تحقق من جميع الحقول
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const address = document.getElementById('address').value;
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
-        
-        // التحقق من ملء الحقول الأساسية
-        if (!name || !email || !address || !paymentMethod) {
-            alert("Please fill in all required fields.");
-            return;
-        }
-
-        // إذا كانت طريقة الدفع هي البطاقة الائتمانية، تأكد من التفاصيل
-        if (paymentMethod.value === 'Credit Card') {
-            const cardNumber = document.getElementById('card-number').value;
-            const expiryDate = document.getElementById('expiry-date').value;
-            const cvv = document.getElementById('cvv').value;
-
-            if (!cardNumber || !expiryDate || !cvv) {
-                alert("Please fill in your credit card details.");
-                return;
-            }
-        }
-
-        // إرسال البيانات إلى الخادم باستخدام AJAX
-        const formData = new FormData(paymentForm);
-
-        fetch('payment_confirmation.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = 'payment_confirmation.php?order_id=' + data.order_id;
-            } else {
-                alert('Payment failed. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error processing your payment.');
+        paymentForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Payment submitted successfully!');
         });
-    });
     </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </body>
 </html>

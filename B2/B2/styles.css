@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* إعدادات عامة */
 body {
     font-family: 'Poppins', Arial, sans-serif; /* تعيين خط Poppins كخط افتراضي */
@@ -9,7 +15,6 @@ body {
     resize: vertical; /* السماح بتغيير الحجم بشكل عمودي */
     max-width: 100%; /* تعيين الحد الأقصى للعرض ليكون 100% */
 }
-
 a {
     text-decoration: none; /* إزالة التسطير من الروابط */
     color: inherit; /* تعيين اللون ليكون نفس لون النص المحيط */
@@ -155,11 +160,11 @@ h1 {
 
 /* تنسيق الإدخال و الاختيارات */
 input, select {
-    width: 50%; /* تعيين العرض إلى 100% */
-    padding: 10px; /* إضافة مسافة داخلية */
+    width: 50%; /* تقليل العرض إلى 50% */
+    padding: 8px; /* تقليل المسافة الداخلية */
     margin: 5px 0; /* إضافة مسافة بين الحقول */
     border-radius: 5px; /* إضافة حواف دائرية */
-    font-size: 1em; /* تعيين حجم الخط */
+    font-size: 0.9em; /* تقليل حجم الخط */
 }
 
 select {
@@ -168,4 +173,16 @@ select {
 
 option {
     color: rgb(0, 0, 0); /* تعيين لون النص في خيارات الاختيار إلى الأسود */
+}
+
+/* تنسيق الاستجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .actions a {
+        width: 100%;
+        text-align: center;
+    }
 }

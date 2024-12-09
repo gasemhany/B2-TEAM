@@ -1,9 +1,9 @@
 <?php
 // إعدادات الاتصال
-$servername = "localhost"; // الخادم المحلي
-$username = "root"; // اسم المستخدم (عادةً 'root' في XAMPP)
-$password = "HDhHLkr360p7n8b5c!v1Zc9="; // كلمة المرور (عادةً فارغة في XAMPP)
-$dbname = "s2709239_B2store"; // اسم قاعدة البيانات التي أنشأتها في phpMyAdmin
+$servername = "23.88.73.88"; // الخادم المحلي
+$username = "u2719155_XZObLAYBtO"; // اسم المستخدم (عادةً 'root' في XAMPP)
+$password = "z4f!J@wYWsPHW.L1z9yZF6WI"; // كلمة المرور (عادةً فارغة في XAMPP)
+$dbname = "s2719155_Bb2"; // اسم قاعدة البيانات التي أنشأتها في phpMyAdmin
 
 // إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname);

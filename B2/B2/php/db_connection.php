@@ -1,15 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "HDhHLkr360p7n8b5c!v1Zc9=";  // أو أدخل كلمة مرور MySQL هنا إذا كانت موجودة
-$dbname = "s2709239_B2store";  // اسم قاعدة البيانات الخاصة بك
+// إعدادات الاتصال بقاعدة البيانات
+$servername = "23.88.73.88"; // عنوان الخادم (يمكن تغييره إذا كان localhost)
+$username = "u2719155_XZObLAYBtO"; // اسم المستخدم لقاعدة البيانات
+$password = "z4f!J@wYWsPHW.L1z9yZF6WI"; // كلمة المرور لقاعدة البيانات
+$dbname = "s2719155_Bb2"; // اسم قاعدة البيانات
 
-// إنشاء الاتصال
+// إنشاء الاتصال بقاعدة البيانات
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // التحقق من الاتصال
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+
+// إذا تم الاتصال بنجاح
+echo "Connected successfully!";
 ?>

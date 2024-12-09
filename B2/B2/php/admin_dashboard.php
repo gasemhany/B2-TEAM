@@ -1,3 +1,34 @@
+<?php
+// بدء الجلسة للتحقق من حالة تسجيل الدخول
+session_start();
+
+// التحقق من أن المستخدم مشرف
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// إضافة الاتصال بقاعدة البيانات
+require_once 'db_connect.php';
+
+// استعلام للحصول على عدد المنتجات
+$productCountQuery = "SELECT COUNT(*) FROM products";
+$productCountResult = $conn->query($productCountQuery);
+$productCount = $productCountResult->fetch_row()[0];
+
+// استعلام للحصول على عدد الطلبات المعلقة
+$orderCountQuery = "SELECT COUNT(*) FROM orders WHERE status='pending'";
+$orderCountResult = $conn->query($orderCountQuery);
+$orderCount = $orderCountResult->fetch_row()[0];
+
+// استعلام للحصول على عدد المستخدمين المسجلين
+$userCountQuery = "SELECT COUNT(*) FROM users";
+$userCountResult = $conn->query($userCountQuery);
+$userCount = $userCountResult->fetch_row()[0];
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,64 +117,4 @@
             background: #333;
             color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            width: 30%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .card p {
-            font-size: 1rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">Admin Dashboard</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Container -->
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="add_product.php">Add Product</a></li>
-                <li><a href="edit_prodact.html">Edit Product</a></li>
-                <li><a href="delete_product.php">Delete Product</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Users</a></li>
-            </ul>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <h1>Welcome, Admin!</h1>
-            <div class="cards">
-                <div class="card">
-                    <h3>Total Products</h3>
-                    <p>50</p>
-                </div>
-                <div class="card">
-                    <h3>Pending Orders</h3>
-                    <p>10</p>
-                </div>
-                <div class="card">
-                    <h3>Registered Users</h3>
-                    <p>200</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            border-radius: 10px;}
