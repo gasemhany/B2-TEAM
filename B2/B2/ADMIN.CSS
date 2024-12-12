@@ -1,123 +1,155 @@
-/* إعدادات الصفحة العامة */
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+body, h1, h2, h3, p, ul, ol, li, a, button {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني */
-    background-size: cover;  /* تأكد من أن الخلفية تغطي كامل الشاشة */
-    background-attachment: fixed; /* لتثبيت الخلفية أثناء التمرير */
-    background-repeat: no-repeat; /* منع تكرار الخلفية */
-    color: white;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #800000);
+    color: #fff;
+    line-height: 1.6;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
-
-/* تنسيق الهيدر */
-.main-header {
-    background-color:linear-gradient(135deg, #000000, #4a0000); /* خلفية داكنة */
+header.admin-header {
+    background: linear-gradient(135deg, #0d0d0d, #800000);
     padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #b30000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* تنسيق اللوجو في الهيدر */
-.main-header .logo a {
-    color: white;
-    font-size: 2.5rem;
+header.admin-header .logo {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+header.admin-header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header.admin-header .nav-links li {
+    margin-left: 20px;
+}
+
+header.admin-header .nav-links a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s, background 0.3s;
+    padding: 8px 15px;
+    border-radius: 7px;
 }
 
-/* تنسيق النافبار */
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: flex;
-    justify-content: center;
+header.admin-header .nav-links a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 102, 102, 0.3);
 }
 
-.nav-links li {
-    margin: 0 20px;
+.admin-section {
+    padding: 25px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #0d0d0d, #800000);
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+.admin-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
 }
 
-.nav-links a:hover {
-    color: #4a0000; /* تغيير اللون عند التمرير على الروابط */
+.admin-section h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* تنسيق نموذج تسجيل الدخول */
-#admin-section {
+.admin-section table {
     width: 100%;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* تنسيق الحقول */
-input[type="text"], input[type="password"] {
-    width: 100%;
+.admin-section table th, .admin-section table td {
+    border: 1px solid #ddd;
     padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
+    text-align: left;
+    color: #fff;
 }
 
-/* تنسيق الزر */
-button[type="submit"] {
-    width: 100%;
-    padding: 14px;
-    background-color: #4a0000;
-    color: white;
+.admin-section table th {
+    background: linear-gradient(135deg, #b30000, #4d0000);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.admin-section table tr:hover {
+    background: rgba(255, 102, 102, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #0d0d0d, #800000);
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 7px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
 }
 
-button[type="submit"]:hover {
-    background-color: #600000;
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* تنسيق الفوتر */
-.main-footer {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #000000, #4a0000);
+.modal {
+    display: none;
     position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.main-footer p {
-    margin: 0;
-    color: white;
+.modal-content {
+    background: linear-gradient(135deg, #0d0d0d, #800000);
+    margin: 10% auto;
+    padding: 25px;
+    width: 50%;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .nav-links li {
-        margin: 10px 0;
-    }
+.modal-content .close {
+    color: #fff;
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    #admin-section {
-        width: 90%;
-        padding: 20px;
-    }
+.modal-content .close:hover {
+    color: #aaa;
 }

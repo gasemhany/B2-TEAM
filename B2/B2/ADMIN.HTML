@@ -3,130 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - B2 Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* التصميم الأساسي */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #000000, #4a0000);
-            color: #fff;
-        }
-
-        header {
-            background: linear-gradient(135deg, #000000, #4a0000);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #fff;
-            color: #000;
-            border-radius: 5px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #222;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .container h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .actions a {
-            text-decoration: none;
-            color: #fff;
-            background: #f2a365;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .actions a:hover {
-            background: #d18b4a;
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #111;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="ADMIN.CSS">
 </head>
 <body>
-    <header>
-        <div class="logo">B2 Store Admin</div>
+    <header class="admin-header">
+        <div class="logo">Admin Panel</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="admin_dashboard.php">Dashboard</a></li>
-                <li><a href="logout.php">Logout</a></li>
+            <ul class="nav-links">
+                <li><a href="#products">Manage Products</a></li>
+                <li><a href="#users">Manage Users</a></li>
+                <li><a href="#orders">View Orders</a></li>
+                <li><a href="logout.html">Logout</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <h1>Welcome to Admin Dashboard</h1>
-        <div class="actions">
-            <a href="add_product.php">Add Product</a>
-            <a href="edit_product.php">Edit Product</a>
-            <a href="delete_product.php">Delete Product</a>
-            <a href="view_products.php">View All Products</a>
-            <a href="manage_orders.php">Manage Orders</a>
+    <section id="products" class="admin-section">
+        <h2>Manage Products</h2>
+        <button onclick="openProductForm()">Add New Product</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <!-- Product rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="users" class="admin-section">
+        <h2>Manage Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-list">
+                <!-- User rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="orders" class="admin-section">
+        <h2>View Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Product</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <!-- Order rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <div id="product-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductForm()">&times;</span>
+            <h2>Add/Edit Product</h2>
+            <form id="product-form">
+                <label for="product-name">Name:</label>
+                <input type="text" id="product-name" name="name" required>
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" name="price" required>
+                <label for="product-stock">Stock:</label>
+                <input type="number" id="product-stock" name="stock" required>
+                <button type="submit">Save</button>
+            </form>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 B2 Store | All Rights Reserved</p>
-    </footer>
+    <script>
+        // JavaScript to manage modal visibility
+        function openProductForm() {
+            document.getElementById('product-form').style.display = 'block';
+        }
+
+        function closeProductForm() {
+            document.getElementById('product-form').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
