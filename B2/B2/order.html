@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلبات العملاء</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>إدارة الطلبات</h1>
+        </header>
+        
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>رقم الطلب</th>
+                    <th>اسم العميل</th>
+                    <th>تاريخ الطلب</th>
+                    <th>حالة الطلب</th>
+                    <th>الإجراء</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#1234</td>
+                    <td>أحمد محمد</td>
+                    <td>2024-12-26</td>
+                    <td><span class="status shipped">تم الشحن</span></td>
+                    <td><button class="btn">عرض التفاصيل</button></td>
+                </tr>
+                <tr>
+                    <td>#1235</td>
+                    <td>سارة علي</td>
+                    <td>2024-12-25</td>
+                    <td><span class="status pending">قيد المعالجة</span></td>
+                    <td><button class="btn">عرض التفاصيل</button></td>
+                </tr>
+                <tr>
+                    <td>#1236</td>
+                    <td>محمد سامي</td>
+                    <td>2024-12-24</td>
+                    <td><span class="status delivered">تم التوصيل</span></td>
+                    <td><button class="btn">عرض التفاصيل</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

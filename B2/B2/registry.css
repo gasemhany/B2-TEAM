@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Reset */
+*{
+    font-family: "poppinms" , sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, h1, p, label, input, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background: blur(20px);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.register-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+
+    background: blur(20px);
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #000000, #4a0000);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #660000;
+    transform: scale(1.05);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff6666;
+}
+p .a{
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 600;
+}

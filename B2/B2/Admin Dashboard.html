@@ -1,56 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - B2 Store</title>
+    <title>B2 Admin Panel</title>
     <link rel="stylesheet" href="admin dashborde.css">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">Admin Dashboard</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Container -->
-    <div class="container">
+
+<body>
+    <div class="admin-container">
         <!-- Sidebar -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="add_product.php">Add Product</a></li>
-                <li><a href="edit_prodact.html">Edit Product</a></li>
-                <li><a href="delete_product.php">Delete Product</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Users</a></li>
-            </ul>
-        </div>
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>B2 Admin</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="Admin Dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="order.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="index.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="Customer.html"><i class="fas fa-users"></i> Customers</a></li>
+                    <li><a href="Report.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+                    <li><a href="Settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
 
         <!-- Main Content -->
-        <div class="main-content">
-            <h1>Welcome, Admin!</h1>
-            <div class="cards">
-                <div class="card">
-                    <h3>Total Products</h3>
-                    <p>50</p>
+        <main class="main-content">
+            <header class="admin-header">
+                <div class="welcome-msg">
+                    <h1>Welcome to B2 Admin Panel</h1>
+                    <p>Manage your store efficiently</p>
                 </div>
-                <div class="card">
-                    <h3>Pending Orders</h3>
-                    <p>10</p>
+                <div class="profile">
+                    <span class="profile-name">Admin</span>
+                    <img src="IMG/B2.jpg" alt="Admin" class="profile-img">
                 </div>
-                <div class="card">
-                    <h3>Registered Users</h3>
-                    <p>200</p>
+            </header>
+
+            <section class="dashboard">
+                <div class="dashboard-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <h2>$12,345</h2>
+                            <p>Total Sales</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <div>
+                            <h2>456</h2>
+                            <p>Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h2>789</h2>
+                            <p>Customers</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <h2>123</h2>
+                            <p>Products</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <section class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1234</td>
+                            <td>John Doe</td>
+                            <td>2024-12-01</td>
+                            <td>$120.00</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1235</td>
+                            <td>Jane Smith</td>
+                            <td>2024-12-02</td>
+                            <td>$80.00</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1236</td>
+                            <td>Bob Brown</td>
+                            <td>2024-12-03</td>
+                            <td>$150.00</td>
+                            <td><span class="status cancelled">Cancelled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
     </div>
 </body>
+
 </html>

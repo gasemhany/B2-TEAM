@@ -6,6 +6,8 @@
     <title>B2 Clothing</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="IMG/B2.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
       <!-- Add the Admin Link -->
 </head>
 <body>
@@ -14,7 +16,7 @@
         
         <nav>
             <ul class="nav-links">
-                <li><a href="cart.html"><img src="IMG/shopping-cart.png" alt="" width="40px" height="40px" ><span>0</span></a></li>
+                <li><a href="cart.html"><i class='bx bx-cart'><span data-price="1">1</span></i></a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="https://www.instagram.com/b2__.store/">Instagram</a></li>
                 <li><a href="Cooming Soon">Cooming Soon</a></li>
@@ -301,6 +303,6 @@
             .catch(error => console.error('خطأ:', error));
         }
     </script>
-     <?php include 'data.php'; ?>
+     
 </body>
 </html>

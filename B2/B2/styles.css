@@ -26,7 +26,7 @@ h1, h2 {
 
 /* رأس الصفحة */
 header {
-    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني من الأسود إلى الأحمر الداكن */
+    background: linear-gradient(135deg, #000000, #8a8a8a); /* تدرج لوني من الأسود إلى الأحمر الداكن */
     color: rgb(255, 255, 255); /* تعيين لون النص ليكون أبيض */
     padding: 10px 20px; /* إضافة مسافة داخلية للرأس */
     display: flex; /* استخدام Flexbox لتوزيع المحتويات */
@@ -62,17 +62,17 @@ header .nav-links a {
 }
 
 header .nav-links a:hover {
-    color: #620000; /* تغيير لون الرابط عند التمرير عليه */
+    color: #585858; /* تغيير لون الرابط عند التمرير عليه */
     transform: scale(1.05); /* تكبير الرابط قليلًا عند التفاعل */
 }
 
 header .nav-links a.active {
-    color: #4a0000; /* تغيير اللون عند التحديد */
+    color: #515151; /* تغيير اللون عند التحديد */
 }
 
 /* قسم عن الشركة */
 .about-section {
-    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مماثل للرأس */
+    background: linear-gradient(135deg, #000000, #8a8a8a); /* تدرج لوني مماثل للرأس */
     padding: 60px 20px; /* إضافة مسافة داخلية */
     text-align: center; /* محاذاة النص في المنتصف */
 }
@@ -90,7 +90,7 @@ header .nav-links a.active {
 /* قسم المنتجات */
 .products-section {
     padding: 60px 20px; /* إضافة مسافة داخلية */
-    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مماثل لبقية الأقسام */
+    background: linear-gradient(135deg, #000000, #8a8a8a); /* تدرج لوني مماثل لبقية الأقسام */
 }
 
 .products-section .product-grid {
@@ -101,7 +101,7 @@ header .nav-links a.active {
 }
 
 .product {
-    background: rgb(0, 0, 0); /* تعيين الخلفية إلى اللون الأسود */
+    background: rgb(23, 23, 23); /* تعيين الخلفية إلى اللون الأسود */
     border-radius: 10px; /* إضافة حواف دائرية للمنتجات */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للمنتجات */
     padding: 20px; /* إضافة مسافة داخلية */
@@ -127,7 +127,7 @@ header .nav-links a.active {
 }
 
 .product .btn {
-    background: #650000; /* تعيين لون خلفية الزر إلى الأحمر الداكن */
+    background: #fffcfc; /* تعيين لون خلفية الزر إلى الأحمر الداكن */
     color: rgb(0, 0, 0); /* تعيين لون النص في الزر إلى الأسود */
     padding: 10px 15px; /* إضافة مسافة داخلية للزر */
     font-size: 1em; /* تعيين حجم الخط للزر */
@@ -137,14 +137,14 @@ header .nav-links a.active {
 }
 
 .product .btn:hover {
-    background: #660000; /* تغيير اللون عند التمرير على الزر */
+    background: #afafaf; /* تغيير اللون عند التمرير على الزر */
 }
 
 /* الفوتر */
 .main-footer {
     text-align: center; /* محاذاة النص في المنتصف */
     padding: 20px 0; /* إضافة مسافة داخلية */
-    background: linear-gradient(135deg, #000000, #4a0000); /* تدرج لوني مشابه لبقية الأقسام */
+    background: linear-gradient(135deg, #000000, #8a8a8a); /* تدرج لوني مشابه لبقية الأقسام */
     color: white; /* تعيين لون النص إلى الأبيض */
     font-size: 1em; /* تعيين حجم الخط */
     position: relative; /* تحديد الوضع النسبي للعنصر */

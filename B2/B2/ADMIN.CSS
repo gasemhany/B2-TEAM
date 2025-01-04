@@ -1,5 +1,9 @@
 /* General Reset */
-body, h1, h2, h3, p, ul, ol, li, a, button {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}body, h1, h2, h3, p, ul, ol, li, a, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,19 +11,19 @@ body, h1, h2, h3, p, ul, ol, li, a, button {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0d0d0d, #800000);
-    color: #fff;
+    background: linear-gradient(135deg, #000000, #8a8a8a);
+    color: #ffffff;
     line-height: 1.6;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 header.admin-header {
-    background: linear-gradient(135deg, #0d0d0d, #800000);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #b30000;
+    border-bottom: 3px solid #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -50,17 +54,18 @@ header.admin-header .nav-links a {
 
 header.admin-header .nav-links a:hover {
     color: #ffffff;
-    background-color: rgba(255, 102, 102, 0.3);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
 }
 
 .admin-section {
     padding: 25px;
     margin: 20px auto;
-    background: linear-gradient(135deg, #0d0d0d, #800000);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
     border-radius: 15px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
     max-width: 1200px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .admin-section:hover {
@@ -86,24 +91,24 @@ header.admin-header .nav-links a:hover {
 }
 
 .admin-section table th, .admin-section table td {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 12px;
     text-align: left;
-    color: #fff;
+    color: #ffffff;
 }
 
 .admin-section table th {
-    background: linear-gradient(135deg, #b30000, #4d0000);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .admin-section table tr:hover {
-    background: rgba(255, 102, 102, 0.2);
+    background: rgba(156, 156, 156, 0.2);
 }
 
 button {
-    background: linear-gradient(135deg, #0d0d0d, #800000);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
     color: #fff;
     border: none;
     padding: 12px 25px;
@@ -133,7 +138,7 @@ button:hover {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #0d0d0d, #800000);
+    background: linear-gradient(135deg, #000000, #8a8a8a);
     margin: 10% auto;
     padding: 25px;
     width: 50%;
@@ -143,7 +148,7 @@ button:hover {
 }
 
 .modal-content .close {
-    color: #fff;
+    color: #ffffff;
     float: right;
     font-size: 26px;
     font-weight: bold;
