@@ -21,11 +21,12 @@ body{
 .test{
     width: 420px;
     background: transparent;
-    color: #ffff;
-    border: 2px solid rgba( 255, 255, 255, .2);
+    color: #ffffff;
+    border: 2px solid rgba(215, 215, 215, 0.175);
     backdrop-filter: blur(20px);
     border-radius: 10px;
    padding: 30px 40px;
+   
 }
 
 .test h1{

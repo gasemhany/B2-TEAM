@@ -57,3 +57,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const cartButton = document.querySelector(".cart-button");
+    const cartDropdown = document.querySelector(".cart-dropdown");
+    const addCartButtons = document.querySelectorAll(".add-cart");
+    const cartCount = document.querySelector(".cart-count");
+    const cartItems = document.querySelector(".cart-items");
+
+    let cart = [];
+
+    addCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const name = button.dataset.name;
+            const price = button.dataset.price;
+
+            cart.push({ name, price });
+            updateCart();
+        });
+    });
+
+    cartButton.addEventListener("mouseenter", () => {
+        cartDropdown.style.display = "block";
+    });
+
+    cartButton.addEventListener("mouseleave", () => {
+        cartDropdown.style.display = "none";
+    });
+
+    function updateCart() {
+        cartCount.textContent = cart.length;
+        cartItems.innerHTML = "";
+
+        cart.forEach(item => {
+            const li = document.createElement("li");
+            
+            cartItems.appendChild(li);
+        });
+    }
+});
