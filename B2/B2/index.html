@@ -1,313 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2 Clothing</title>
+    <title>متجرنا - <?php echo SITE_NAME; ?></title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="IMG/LogoGassem.png">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-      <!-- Add the Admin Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo"><img src="IMG/LogoGassem.png" alt="" width="60px" height="60px"></div>
-        <div class="cart-contaner">
-            
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">متجرنا</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="products.php">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.php" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.php">تسجيل الدخول</a>
+                <a href="register.php">إنشاء حساب</a>
+            </div>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="cart.html"><i class='bx bx-cart'><span>0</span></i></a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="https://www.instagram.com/b2__.store/">Instagram</a></li>
-                <li><a href="">Cooming Soon</a></li>
-                
-            </ul>
-           
-               
-            
-        </nav>
     </header>
 
-    <section id="products" class="products-section">
-        <h1>Welcome to B2 Store</h1>
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <!-- Loop Example for Products -->
-            <!-- Add dynamic IDs and Classes -->
-             <form action="/php/products.php" method="post"></form>
-            <div class="product" data-product-id="1" data-price="550">
-                <img src="./IMG/WhatsApp Image 2024-11-17 at 16.13.26_56ac1829.jpg" alt="Product 1">
-                <h3>MOON</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <button class="btn">Add Cart</button>
-                <a href="payment.html"><button class="btn" >Buy Now</button></a>
-            </div>
-
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/heart.jpg" alt="Product 2">
-                <h3>Heart</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <button class="btn">Add Cart</button>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Marwam Mousa.png" alt="Product 3">
-                <h3>Marwam Mousa</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/heart1.jpg" alt="Product 4">
-                <h3>heart1</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <button class="btn">Add Cart</button>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/lacasa.png" alt="Product 5">
-                <h3>Lacasa Depapel</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Cairokee.jpg" alt="Product 6">
-                <h3>Cairokee</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Cairokee1.png" alt="Product 7">
-                <h3>Cairokee1</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/palestien.png" alt="Product 8">
-                <h3>palestien</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/palestane1.png" alt="Product 9">
-                <h3>palestien1</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-               <a href="payment.html   "><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="img/palestien3.png" alt="Product 10">
-                <h3>palestien3</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/moon2.png" alt="Product 11">
-                <h3>Moon2</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Astronat.png" alt="Product 2">
-                <h3>Astronat</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Shabjdeed.png" alt="Product 2">
-                <h3>Shabjdeed</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/travis.png" alt="Product 2">
-                <h3>travis</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/trapstar.png" alt="Product 2">
-                <h3>Trapstar</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-            <div class="product" data-product-id="2" data-price="550">
-                <img src="IMG/Racore.png" alt="Product 2">
-                <h3>Racore</h3>
-                <input type="number" class="quantity" min="1" value="1">
-                <select name="size" class="size-selector">
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="XLarge">XLarge</option>
-                    <option value="X2Large">X2Large</option>
-                </select>
-                <p class="price-display">Price: 550 LE</p>
-                <a href="cart.html"><button class="btn">Add Cart</button></a>
-                <a href="payment.html"><button class="btn">Buy Now</button></a>
-            </div>
-        </form>
-    </div>
-
-            <!-- Repeat similar structure for all 16 products -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مرحباً بكم في متجرنا</h1>
+            <p>اكتشف أحدث المنتجات بأفضل الأسعار</p>
+            <a href="products.php" class="btn">تصفح المنتجات</a>
         </div>
     </section>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 B2 STORE | All Rights Reserved</p>
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-truck feature-icon"></i>
+                <h3>توصيل سريع</h3>
+                <p>نقدم خدمة توصيل سريعة وآمنة لجميع أنحاء المملكة</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>دفع آمن</h3>
+                <p>نضمن لك عملية دفع آمنة ومشفرة</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset feature-icon"></i>
+                <h3>دعم فني</h3>
+                <p>فريق دعم فني متاح على مدار الساعة</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="section-title">
+            <h2>أحدث المنتجات</h2>
+            <p>اكتشف تشكيلتنا المميزة من المنتجات</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="منتج 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">منتج 1</h3>
+                    <div class="product-price">199 ريال</div>
+                    <p class="product-description">وصف مختصر للمنتج الأول</p>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/product2.jpg" alt="منتج 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">منتج 2</h3>
+                    <div class="product-price">299 ريال</div>
+                    <p class="product-description">وصف مختصر للمنتج الثاني</p>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/product3.jpg" alt="منتج 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">منتج 3</h3>
+                    <div class="product-price">399 ريال</div>
+                    <p class="product-description">وصف مختصر للمنتج الثالث</p>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>عن المتجر</h3>
+                <p>متجرنا هو وجهتك الأولى لشراء أحدث المنتجات بأفضل الأسعار</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.php">المنتجات</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="#">سياسة الإرجاع</a></li>
+                    <li><a href="#">الشحن والتوصيل</a></li>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 1234567890</li>
+                    <li><i class="fas fa-envelope"></i> info@store.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Get all products and attach event listeners
-        document.querySelectorAll('.product').forEach((product) => {
-            const quantityInput = product.querySelector('.quantity');
-            const priceDisplay = product.querySelector('.price-display');
-            const basePrice = parseFloat(product.getAttribute('data-price'));
+        // تحديث عداد السلة
+        function updateCartCount() {
+            fetch('php/cart.php?action=get_count')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.cart-count').textContent = data.count;
+                    }
+                });
+        }
 
-            // Event Listener for Quantity Change
-            quantityInput.addEventListener('input', () => {
-                const quantity = parseInt(quantityInput.value) || 1; // Fallback to 1 if invalid input
-                const totalPrice = quantity * basePrice;
-                priceDisplay.textContent = `Price: ${totalPrice} LE`;
+        // تحديث العداد عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+
+        // إضافة منتج إلى السلة
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.dataset.productId;
+                fetch('php/cart.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'action=add&product_id=' + productId
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        updateCartCount();
+                        alert('تمت إضافة المنتج إلى السلة');
+                    } else {
+                        alert(data.message);
+                    }
+                });
             });
         });
-        function sendProducts() {
-            // إنشاء قائمة المنتجات
-            const products = [
-                { name: "منتج 1", quantity: document.getElementById('quantity1').value },
-                { name: "منتج 2", quantity: document.getElementById('quantity2').value },
-                { name: "منتج 3", quantity: document.getElementById('quantity3').value }
-            ];
-
-            // إرسال البيانات باستخدام AJAX
-            fetch('process_products.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(products)
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('response').innerHTML = data;
-            })
-            .catch(error => console.error('خطأ:', error));
-        }
     </script>
-     
 </body>
 </html>
